@@ -1,0 +1,6 @@
+# Code owners for garage-mock-sprint-team-2 (COSC2408 Team 2)
+# The PM is the required final approver on every PR to `main`
+# ("PM writes the cards and signs off last; nobody else marks a task Done").
+# Combined with branch protection (2 approvals), this forces a Dev 2 (tester)
+# review plus the PM's sign-off before any merge.
+* @SidZng
