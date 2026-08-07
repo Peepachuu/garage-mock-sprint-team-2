@@ -52,7 +52,23 @@ No backend or authentication functionality should be modified.
 
 ---
 
-## 3. Edge Cases
+## 3. Navigation Flow
+
+- The Team Page is displayed **after a successful login**.
+- Users must log in before they can access the Team Page.
+- The existing login flow must remain unchanged.
+
+---
+
+## 4. Data Source
+
+- Team member information will be **hardcoded** for the mock sprint.
+- No Firestore integration or backend changes are required.
+- The page will display static team information only.
+
+---
+
+## 5. Edge Cases
 
 ### Missing Profile Photo
 
@@ -84,7 +100,7 @@ No backend or authentication functionality should be modified.
 
 ---
 
-## 4. Acceptance Criteria
+## 6. Acceptance Criteria
 
 The feature is complete when:
 
@@ -103,7 +119,7 @@ The feature is complete when:
 
 ---
 
-## 5. Handoff Notes
+## 7. Handoff Notes
 
 These requirements define the expected behaviour and limitations of the team page and login styling feature.
 
