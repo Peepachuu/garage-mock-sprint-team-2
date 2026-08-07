@@ -14,6 +14,10 @@ overrides:
   postcss: '^8.5.18'
   # next also bundles an old sharp (image optimization) — force the patched line.
   sharp: '^0.35.0'
+  # eslint pulls in js-yaml@4.3.0 transitively via @eslint/eslintrc.
+  # GHSA-5p4m-2wfm-xmqj (quadratic CPU in !!omap parsing) is patched in 4.3.1
+  # on the v4-legacy line. Dev-only dependency, but it fails the CI audit gate.
+  js-yaml: '^4.3.1'
 
 allowBuilds:
   '@firebase/util': true
