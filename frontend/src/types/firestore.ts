@@ -31,3 +31,12 @@ export interface Note {
   updatedAt: Timestamp
   _schemaVersion: 1
 }
+
+export interface Team {
+  name: string
+  role: string
+  initials: string
+  description: string
+  boxColour: string
+  textColour: string
+}
