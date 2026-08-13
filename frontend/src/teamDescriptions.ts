@@ -1,7 +1,7 @@
 import type { Team } from '@/types/firestore'
 
 export const teams: Team[] = [
-    
+
     {
     name: 'Sidney Zeng',
     role: 'PROJECT MANAGER',
@@ -35,8 +35,8 @@ export const teams: Team[] = [
     initials: 'ZH',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
-    boxColour: 'bg-blue-100',
-    textColour: 'text-blue-800',
+    boxColour: 'bg-pink-100',
+    textColour: 'text-pink-800',
   },
   {
     name: 'Chirag Wadehra',
