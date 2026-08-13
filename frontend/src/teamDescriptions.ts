@@ -7,7 +7,7 @@ export const teams: Team[] = [
     role: 'PROJECT MANAGER',
     initials: 'SZ',
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+      "Sidney Zeng PM for Group 20, in his final semester of a Bachelor of Information Technology at RMIT. His focus is keeping the team unblocked and the project moving, coordinating across the BA, UX and development roles, maintaining the board and sprint cadence, managing communication with the client and supervisor, and ensuring decisions are recorded rather than lost in conversation",
     boxColour: 'bg-blue-100',
     textColour: 'text-blue-800',
   },
