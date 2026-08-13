@@ -21,8 +21,8 @@ export default async function TeamPage() {
                 <h1 className="text-5xl font-bold tracking-tight">
                     Team 2
                 </h1>
-                    <p className="mt-3 max-w-2xl text-base text-zinc-500">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    <p className="mt-6 text-lg text-base text-zinc-500">
+                        Meet Team 2, a group of students working together, with each team member contributing different skills and responsibilities to complete this project to the highest standard.
                     </p>
             </div>
 
