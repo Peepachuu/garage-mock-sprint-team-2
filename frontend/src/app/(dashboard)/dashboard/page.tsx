@@ -28,7 +28,7 @@ export default async function DashboardPage() {
         {(['Metric One', 'Metric Two', 'Metric Three'] as const).map((title) => (
           <div
             key={title}
-            className="rounded-lg border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
+            className="rounded-lg border border-zinc-200 bg-white p-6 shadow-sm"
           >
             <p className="text-sm font-medium text-zinc-500">{title}</p>
             <p className="mt-2 text-3xl font-bold">—</p>

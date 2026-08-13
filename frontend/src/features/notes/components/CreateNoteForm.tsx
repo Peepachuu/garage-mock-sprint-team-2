@@ -44,7 +44,7 @@ export function CreateNoteForm() {
           type="text"
           aria-invalid={!!errors.title}
           aria-describedby={errors.title ? 'title-error' : undefined}
-          className="w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-zinc-400 focus:ring-2 focus:ring-zinc-500 focus:outline-none aria-invalid:border-red-500 dark:border-zinc-700 dark:bg-zinc-900"
+          className="w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-zinc-400 focus:ring-2 focus:ring-zinc-500 focus:outline-none aria-invalid:border-red-500"
           placeholder="Note title"
           {...register('title')}
         />
@@ -62,7 +62,7 @@ export function CreateNoteForm() {
         <textarea
           id="body"
           rows={3}
-          className="w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-zinc-400 focus:ring-2 focus:ring-zinc-500 focus:outline-none dark:border-zinc-700 dark:bg-zinc-900"
+          className="w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-zinc-400 focus:ring-2 focus:ring-zinc-500 focus:outline-none"
           placeholder="Write something..."
           {...register('body')}
         />
@@ -71,7 +71,7 @@ export function CreateNoteForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="rounded-md bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+        className="rounded-md bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {isSubmitting ? 'Saving…' : 'Add note'}
       </button>
