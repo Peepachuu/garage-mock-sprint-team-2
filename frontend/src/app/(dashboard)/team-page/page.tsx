@@ -39,8 +39,15 @@ export default async function TeamPage() {
                 <div 
                 className={`flex items-center gap-20 ${index % 2 === 1 ? 'flex-row-reverse' : 'flex-row'}`}> 
 
-                    <h1>hi</h1>
-                    <p>hello</p>
+                    {/* Initials box */}
+                    <div 
+                        className={`flex h-[260px] w-[260px] items-center justify-center rounded-[30px] shrink-0 ${team.boxColour}`}>                          
+                            <span className="text-7xl font-bold">
+                                {team.initials}
+                            </span>
+                    </div>
+
+                    
 
 
 
