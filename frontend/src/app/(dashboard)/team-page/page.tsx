@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { getServerSession } from '@/actions/auth.actions'
-import type { Team } from '@/types/firestore'
 import { teams } from '@/teamDescriptions'
 
 
@@ -29,7 +28,6 @@ export default async function TeamPage() {
 
          
         {teams.map((team, index) => (
-            
 
             <div 
                 key={team.name}
@@ -42,27 +40,52 @@ export default async function TeamPage() {
                     {/* Initials box */}
                     <div 
                         className={`flex h-[260px] w-[260px] items-center justify-center rounded-[30px] shrink-0 ${team.boxColour}`}>                          
-                            <span className="text-7xl font-bold">
+                            <span className={`text-7xl font-bold ${team.textColour}`}>
                                 {team.initials}
                             </span>
                     </div>
 
+                    {/* Team Member information beside the initial box */}
+                    <div className="flex-1">
+
+                        {/* Index + role */}
+                        <div className="mb-5 flex font-semibold text-sm items-center gap-3">
+
+                            {/* Index */}
+                            <span className="text-zinc-300">
+                                {String(index + 1).padStart(2, '0')}
+                            </span>
+
+                            {/* . */}
+                            <span className="text-zinc-300">
+                                •
+                            </span>
+
+                            {/* role */}
+                            <span className="text-blue-600 tracking-wide">
+                                {team.role}
+                            </span>
+
+                        </div>
+
+                        {/* name */}
+                        <h2 className="text-4xl font-bold text-zinc-900">
+                            {team.name}
+                        </h2>
+
+                        {/* description */}
+                        <p className="mt-6 text-lg text-zinc-600">
+                            {team.description}
+                        </p>
+
+                    </div>
                     
-
-
-
                 </div>
 
-
-
             </div>
-            
+
         ))}
         </div>
-
-        
-        
-        
 
     )
 
