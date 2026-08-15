@@ -39,4 +39,5 @@ export interface Team {
   description: string
   boxColour: string
   textColour: string
+  image?: string
 }
