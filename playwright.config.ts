@@ -7,11 +7,6 @@ try {
   // .env not found — fine if vars are already set another way (CI secrets, shell export, etc.)
 }
 
-// TEMP DEBUG — remove after confirming values are correct
-console.log('DEBUG email:', JSON.stringify(process.env.TEST_USER_EMAIL));
-console.log('DEBUG password length:', process.env.TEST_USER_PASSWORD?.length);
-console.log('DEBUG password (masked):', process.env.TEST_USER_PASSWORD?.replace(/./g, '*'));
-
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
