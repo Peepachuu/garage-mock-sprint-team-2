@@ -1,4 +1,10 @@
 import { defineConfig } from '@playwright/test'
+import { existsSync } from 'node:fs'
+import { resolve } from 'node:path'
+import { loadEnvFile } from 'node:process'
+
+const localEnvPath = resolve(__dirname, '.env.local')
+if (existsSync(localEnvPath)) loadEnvFile(localEnvPath)
 
 export default defineConfig({
   testDir: './tests/e2e',

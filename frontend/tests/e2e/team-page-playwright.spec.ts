@@ -1,7 +1,7 @@
 import { test, expect, type Page } from '@playwright/test'
 
-const testEmail = "wdgann123321@gmail.com"
-const testPassword = "Wdgann123321"
+const testEmail = process.env.TEST_USER_EMAIL
+const testPassword = process.env.TEST_USER_PASSWORD
 
 
 // Reusable Login function 
@@ -10,7 +10,7 @@ async function login(page: Page) {
   // If there is no email or password set in the ENV, throw an error
   if (!testEmail || !testPassword) {
     throw new Error(
-      'E2E_TEST_EMAIL and E2E_TEST_PASSWORD must be set before running authenticated tests.'
+      'TEST_USER_EMAIL and TEST_USER_PASSWORD must be set before running authenticated tests.'
     )
   }
 
@@ -55,58 +55,31 @@ test.describe('Team-page edge cases', () => {
   })
 
   // Third test: Missing team-member photo displays the initials instead
-  // test('missing team-member photo displays the team member initials', async ({
-  //   page,
-  // }) => {
-
-  //   // Simulate sidney's image failing to load
-  //   await page.route('**/*', async (route) => {
-  //     const url = route.request().url()
-
-  //     // deliberately causing the request to fail 
-  //     if (url.includes('zac.jpeg')) {
-  //       await route.abort()
-  //     } else {
-  //       await route.continue()
-  //     }
-  //   })
-
-  //   // login
-  //   await login(page)
-
-  //   // Confirm we reached the team page
-  //   await expect(page).toHaveURL(/\/team-page$/)
-
-  //   // Confirm Sidney's initials (SZ) are displayed instead of the photo
-  //   await expect(page.getByText('ZC', {exact: true})).toBeVisible()
-  // })
-
   test('missing team-member photo displays the team member initials', async ({
-  page,
-}) => {
-  // Intercept requests before opening the team page
-  await page.route('**/*', async (route) => {
-    const url = route.request().url()
+    page,
+  }) => {
 
-    // Deliberately cause Chirag's image request to fail
-    if (url.includes('zac.jpeg')) {
-      await route.abort()
-    } else {
-      await route.continue()
-    }
+    // Simulate sidney's image failing to load
+    await page.route('**/*', async (route) => {
+      const url = route.request().url()
+
+      // deliberately causing the request to fail 
+      if (url.includes('sidney.jpeg')) {
+        await route.abort()
+      } else {
+        await route.continue()
+      }
+    })
+
+    // login
+    await login(page)
+
+    // Confirm we reached the team page
+    await expect(page).toHaveURL(/\/team-page$/)
+
+    // Confirm Sidney's initials (SZ) are displayed instead of the photo
+    await expect(page.getByText('SZ', {exact: true})).toBeVisible()
   })
-
-  // Login
-  await login(page)
-
-  // Confirm we reached the team page
-  await expect(page).toHaveURL(/\/team-page$/)
-
-  // When the request fails, Chirag's initials should replace the image
-  await expect(
-    page.getByText('ZC', { exact: true })
-  ).toBeVisible()
-})
 
 
   // Fourth test: Checking if long-blurbs extend the layout instead of breaking the layout
