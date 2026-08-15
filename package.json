@@ -22,7 +22,9 @@
     "prepare": "lefthook install"
   },
   "devDependencies": {
-    "lefthook": "^1.11.13",
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.2.0",
+    "lefthook": "^1.13.6",
     "next": "16.2.12"
   }
 }
