@@ -171,6 +171,9 @@ See [CLAUDE.md](CLAUDE.md) for the full harness reference.
 | Git workflow | [docs/GIT-WORKFLOW.md](docs/GIT-WORKFLOW.md) |
 | CI/CD & deployment | [docs/CI-CD.md](docs/CI-CD.md) |
 
+## Mock Sprint 1
+See [SIGNOFF.md](SIGNOFF.md) for the project sign-off.
+
 ## Deployment
 
 The frontend deploys to **Vercel** (free Hobby tier, no billing account needed — this app is server-rendered, so it needs a server host, not static hosting). Firestore rules deploy automatically from CI on merge to `main`; the optional backend (Cloud Function) deploys manually and requires Firebase's paid Blaze plan. Full setup: [docs/CI-CD.md](docs/CI-CD.md).
