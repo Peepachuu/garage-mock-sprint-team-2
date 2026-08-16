@@ -62,9 +62,9 @@ No backend or authentication functionality should be modified.
 
 ## 4. Data Source
 
-- Team member information will be **hardcoded** for the mock sprint.
-- No Firestore integration or backend changes are required.
-- The page will display static team information only.
+- Team member information will be dynamically rendered from the configured team data source.
+- The implementation should allow team information to be maintained and updated without changing the Team Page layout.
+- No new backend or authentication changes are required for this feature.
 
 ---
 
