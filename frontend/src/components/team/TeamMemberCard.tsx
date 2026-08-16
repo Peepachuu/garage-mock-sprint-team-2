@@ -72,7 +72,7 @@ export function TeamMemberCard({team, index}:
                 </h2>
 
                 {/* Team member description displayed */}
-                <p className="mt-6 text-lg text-zinc-600">
+                <p data-testid="team-member-blurb" className="mt-6 text-lg text-zinc-600">
                     {team.description}
                 </p>
 
